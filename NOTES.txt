@@ -1,0 +1,66 @@
+===========================> SERVICES <==================================
+
+-->eureka-server - 8761
+-->api-gateway   - 8765
+-->blog-service  - 8000
+-->blog-actions  - 8100
+
+===========================> MODELS <==================================
+
+String id - auto ganerated ID
+String autherId - 
+String tile
+String content
+
+
+
+===========================> URLS <==================================
+
+-->blog-service 
+
+=>Get All blog:
+@GET
+http://localhost:8765/blog-service/blog/all
+
+
+@GET
+http://localhost:8000/blog-service//blog/auther/{autherId}/category/{category}
+
+=>Create New blog:
+@Post
+http://localhost:8000/blog-service/new
+@RequestBody:
+                {
+                "id":"will be auto ganerated",
+                "autherId"  :"zcbicvc",
+                "title": "title",
+                "content":"content bcscbu"
+                }
+
+=>Delete blog:
+@Delete
+http://localhost:8765/blog-service/blog/delete/{id}
+
+
+
+-->blog-actions
+
+===============> Comment <===============
+@Post
+http://localhost:8100/blog-actions/comment/new
+@RequestBody:
+                {
+                "commentId":"will be generated",
+                "blogId"  :"d0005c81-f4fd-44ed-94dd-fbf7ebeb9905",
+                "userId": "d0005c81-f4fd-44ed",
+                "comment":"My first Comment"
+                }
+@Get
+http://localhost:8100/blog-actions/comment/commentid/{commentId}
+
+@Get
+http://localhost:8100/blog-actions/comment/blogid/{blogId}
+
+@Get
+http://localhost:8100/blog-actions/comment/userid/{userId}
+
