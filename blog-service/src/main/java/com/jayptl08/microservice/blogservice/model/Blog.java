@@ -1,5 +1,6 @@
 package com.jayptl08.microservice.blogservice.model;
 
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
 import jakarta.persistence.Lob;
@@ -10,11 +11,13 @@ public class Blog {
     @Id
     private String id;
 
-    private String autherId;
+    private String userId;
     private String title;
-    @Lob
+
+    // @Lob
+    @Column(columnDefinition = "TEXT")
     private String content;
-    private String category;
+    private String category;    
 
     public String getId() {
         return id;
@@ -24,12 +27,12 @@ public class Blog {
         this.id = id;
     }
 
-    public String getAutherId() {
-        return autherId;
+    public String getuserId() {
+        return userId;
     }
 
-    public void setAutherId(String autherId) {
-        this.autherId = autherId;
+    public void setuserId(String userId) {
+        this.userId = userId;
     }
 
     public String getTitle() {
@@ -59,9 +62,9 @@ public class Blog {
     public Blog() {
     }
 
-    public Blog(String id, String autherId, String title, String content, String category) {
+    public Blog(String id, String userId, String title, String content, String category) {
         this.id = id;
-        this.autherId = autherId;
+        this.userId = userId;
         this.title = title;
         this.content = content;
         this.category = category;

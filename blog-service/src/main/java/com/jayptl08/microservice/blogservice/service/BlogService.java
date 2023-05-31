@@ -34,16 +34,20 @@ public class BlogService {
         blogRepository.deleteById(id);
     }
 
-    public List<Blog> getBlogOfAuther(String autherId) {
-        return blogRepository.findByAutherId(autherId);
+    public void updateBlog(String id,Blog blog){
+        blogRepository.save(blog);
+    }
+
+    public List<Blog> getBlogOfuser(String userId) {
+        return blogRepository.findByuserId(userId);
     }
 
     public List<Blog> getAllBlogsByCategory(String category){
         return blogRepository.findByCategory(category);
     }
 
-    public List<Blog> getAllBlogsByAutherAndCategory(String autherId,String category){
-        return blogRepository.findByAutherIdAndCategory(autherId, category);
+    public List<Blog> getAllBlogsByuserAndCategory(String userId,String category){
+        return blogRepository.findByuserIdAndCategory(userId, category);
     }
 
 }

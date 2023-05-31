@@ -8,7 +8,7 @@ import com.jayptl08.microservice.blogservice.model.Blog;
 
 
 public interface BlogRepository extends JpaRepository<Blog,String> {
-    List<Blog> findByAutherId(String autherId);
+    List<Blog> findByuserId(String userId);
     List<Blog> findByCategory(String category);
-    List<Blog> findByAutherIdAndCategory(String autherId,String category);
+    List<Blog> findByuserIdAndCategory(String userId,String category);
 }
