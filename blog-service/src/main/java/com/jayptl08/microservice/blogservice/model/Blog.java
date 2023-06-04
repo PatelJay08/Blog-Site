@@ -3,7 +3,6 @@ package com.jayptl08.microservice.blogservice.model;
 import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Id;
-import jakarta.persistence.Lob;
 
 @Entity
 public class Blog {
@@ -14,10 +13,9 @@ public class Blog {
     private String userId;
     private String title;
 
-    // @Lob
     @Column(columnDefinition = "TEXT")
     private String content;
-    private String category;    
+    private String category;
 
     public String getId() {
         return id;

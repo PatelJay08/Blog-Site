@@ -17,19 +17,24 @@ public class CommentService {
         this.repository = repository;
     }
 
-    public Comment addNewComment(Comment comment){
+    public Comment addNewComment(Comment comment) {
         return repository.save(comment);
     }
 
-    public Optional<Comment> getAComment(String commentId){
+    public Optional<Comment> getAComment(String commentId) {
         return repository.findById(commentId);
     }
 
-    public List<Comment> getCommentsByBlogId(String blogId){
+    public List<Comment> getCommentsByBlogId(String blogId) {
         return repository.findAllByBlogId(blogId);
     }
-    public List<Comment> getCommentsByUserId(String userId){
+
+    public List<Comment> getCommentsByUserId(String userId) {
         return repository.findAllByUserId(userId);
+    }
+
+    public void deleteComment(String commentId) {
+        repository.deleteById(commentId);
     }
 
 }

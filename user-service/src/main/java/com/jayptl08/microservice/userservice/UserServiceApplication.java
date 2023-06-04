@@ -1,4 +1,4 @@
-package com.jayptl08.microservice.blogactions;
+package com.jayptl08.microservice.userservice;
 
 import org.springframework.boot.SpringApplication;
 import org.springframework.boot.autoconfigure.SpringBootApplication;
@@ -7,10 +7,10 @@ import org.springframework.web.servlet.config.annotation.CorsRegistry;
 import org.springframework.web.servlet.config.annotation.WebMvcConfigurer;
 
 @SpringBootApplication
-public class BlogActionsApplication {
+public class UserServiceApplication {
 
 	public static void main(String[] args) {
-		SpringApplication.run(BlogActionsApplication.class, args);
+		SpringApplication.run(UserServiceApplication.class, args);
 	}
 
 	@Bean
